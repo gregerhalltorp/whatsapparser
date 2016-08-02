@@ -1,0 +1,34 @@
+{
+  "name": "whatsappparser",
+  "version": "0.1.1",
+  "description": "Parse whatsapp file, extract info, save to Mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec \"test/**/*.spec.js\" --compilers js:babel-register"
+  },
+  "author": "Greger Hälltorp",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "babel-register": "^6.11.6",
+    "chai": "^3.5.0",
+    "eslint": "^3.1.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "mocha": "^2.5.3"
+  }
+}
