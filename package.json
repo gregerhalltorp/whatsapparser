@@ -1,8 +1,8 @@
 {
   "name": "@gregerhalltorp/whatsappparser",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Parse stream-split whatsapp file into JSON stream",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
     "test": "mocha --reporter spec \"test/**/*.spec.js\" --compilers js:babel-register"
