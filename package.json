@@ -1,6 +1,6 @@
 {
   "name": "@gregerhalltorp/whatsappparser",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Parse stream-split whatsapp file into JSON stream",
   "main": "./src/index.js",
   "scripts": {
