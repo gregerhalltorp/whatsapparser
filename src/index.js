@@ -1,7 +1,7 @@
-const Transform = require('stream').Transform;
-const createHash = require('crypto').createHash;
-// import { Transform } from 'stream';
-// import { createHash } from 'crypto';
+// const Transform = require('stream').Transform;
+// const createHash = require('crypto').createHash;
+import { Transform } from 'stream';
+import { createHash } from 'crypto';
 
 const splitRegex = /(\d{2}\/\d{2}\/\d{4},\s{1}\d{2}:\d{2}\s{1})/;
 const dateRegex = /(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2})/;

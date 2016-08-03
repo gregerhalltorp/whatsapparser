@@ -2,7 +2,7 @@
 import { expect } from 'chai';
 import { createReadStream } from 'fs';
 import { split, through } from 'event-stream';
-import Parser from '../index';
+import Parser from '../src/index';
 
 const setup = () => {
   const splitRegex = /(\d{2}\/\d{2}\/\d{4},\s{1}\d{2}:\d{2}\s{1})/;

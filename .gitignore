@@ -16,3 +16,4 @@ babel-temp/
 *.nupkg
 .tern-project
 *.swp
+dist/
