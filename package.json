@@ -1,7 +1,7 @@
 {
-  "name": "whatsappparser",
-  "version": "0.1.1",
-  "description": "Parse whatsapp file, extract info, save to Mongo",
+  "name": "greger-whatsappparser",
+  "version": "0.9.0",
+  "description": "Parse stream-split whatsapp file into JSON stream",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec \"test/**/*.spec.js\" --compilers js:babel-register"
