@@ -11,7 +11,7 @@ const setup = () => {
   const getMessages = new Promise(
     (resolve, reject) => { // eslint-disable-line no-unused-vars
       const tempMsgs = [];
-      createReadStream('test.txt', { flags: 'r' })
+      createReadStream('test/test.txt', { flags: 'r' })
       .pipe(split(splitRegex))
       .pipe(parser)
       .pipe(through(
