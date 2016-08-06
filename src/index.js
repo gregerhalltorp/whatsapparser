@@ -1,7 +1,6 @@
-// const Transform = require('stream').Transform;
-// const createHash = require('crypto').createHash;
 import { Transform } from 'stream';
 import { createHash } from 'crypto';
+import { split } from 'event-stream';
 
 const splitRegex = /(\d{2}\/\d{2}\/\d{4},\s{1}\d{2}:\d{2}\s{1})/;
 const dateRegex = /(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2})/;
@@ -66,5 +65,10 @@ class Parser extends Transform {
   }
 }
 
+
 export default Parser;
-module.exports = Parser;
+export const splitter = split(splitRegex);
+module.exports = {
+  Parser,
+  splitter: split(splitRegex),
+};

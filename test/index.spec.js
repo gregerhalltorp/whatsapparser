@@ -1,18 +1,17 @@
 /* eslint-disable no-unused-expressions */
 import { expect } from 'chai';
 import { createReadStream } from 'fs';
-import { split, through } from 'event-stream';
-import Parser from '../src/index';
+import { through } from 'event-stream';
+import Parser, { splitter } from '../src/index';
 
 const setup = () => {
-  const splitRegex = /(\d{2}\/\d{2}\/\d{4},\s{1}\d{2}:\d{2}\s{1})/;
   const parser = new Parser();
 
   const getMessages = new Promise(
     (resolve, reject) => { // eslint-disable-line no-unused-vars
       const tempMsgs = [];
       createReadStream('test/test.txt', { flags: 'r' })
-      .pipe(split(splitRegex))
+      .pipe(splitter)
       .pipe(parser)
       .pipe(through(
         data => {
