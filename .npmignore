@@ -1,2 +1,11 @@
 src
 examples
+.babelrc
+.editorconfig
+.eslintrc
+.gitignore
+.npmignore
+.babelrc
+index.js
+logger
+webpack.config.js

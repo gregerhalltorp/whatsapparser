@@ -2,8 +2,10 @@
   "name": "@gregerhalltorp/whatsappparser",
   "version": "0.9.3",
   "description": "Parse stream-split whatsapp file into JSON stream",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
+    "clean": "rimraf lib",
+    "prepublish": "npm run clean && npm run build",
     "build": "babel src --out-dir dist",
     "test": "mocha --reporter spec \"test/**/*.spec.js\" --compilers js:babel-register"
   },
@@ -35,6 +37,7 @@
     "minimist": "^1.2.0",
     "mocha": "^2.5.3",
     "mongodb": "^2.2.5",
-    "request": "^2.74.0"
+    "request": "^2.74.0",
+    "rimraf": "^2.5.4"
   }
 }

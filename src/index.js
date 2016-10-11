@@ -4,7 +4,7 @@ import { split } from 'event-stream';
 
 const splitRegex = /(\d{2}\/\d{2}\/\d{4},\s{1}\d{2}:\d{2}\s{1})/;
 const dateRegex = /(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2})/;
-const msgRegex = /^- (.*): ((?:.|\n)*)/;
+const msgRegex = /^- (.*?): ((?:.|\n)*)/;
 
 const parseDatePart = (data) => {
   if (!data.length) {
@@ -52,7 +52,8 @@ class Parser extends Transform {
       const parsedMessage = parseMessagePart(data);
       this.message.name = parsedMessage.name;
       this.message.body = parsedMessage.body;
-      this.message.words = parsedMessage.body.split(/\s/);
+      this.message.words = parsedMessage.body.split(/\s/).map(str => str.replace(/[\.,:;!?]$/, ''));
+      this.message.wordCount = this.message.words.length;
       this.message.hashId = createHash('sha256')
         .update(`${this.message.date}${this.message.name}${this.message.body}`)
         .digest('hex');
